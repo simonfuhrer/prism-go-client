@@ -3,7 +3,7 @@ package v3
 import (
 	"time"
 
-	"github.com/nutanix-cloud-native/prism-go-client"
+	prismgoclient "github.com/nutanix-cloud-native/prism-go-client"
 )
 
 // Reference ...
@@ -2761,4 +2761,10 @@ type AvailabilityZoneStatus struct {
 	Resources   *AvailabilityZoneResources `json:"resources,omitempty"` // AvailabilityZone Resource Definition
 	MessageList []MessageResource          `json:"message_list,omitempty"`
 	State       *string                    `json:"state,omitempty"` // The state of the entity
+}
+
+// TaskVMResponse definition.
+
+type TaskVMResponse struct {
+	TaskUUID string `json:"task_uuid,omitempty"`
 }

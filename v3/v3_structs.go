@@ -2763,8 +2763,10 @@ type AvailabilityZoneStatus struct {
 	State       *string                    `json:"state,omitempty"` // The state of the entity
 }
 
-// TaskVMResponse definition.
+type TaskVMRequest struct {
+	TaskUUID string `json:"task_uuid"`
+}
 
 type TaskVMResponse struct {
-	TaskUUID string `json:"task_uuid,omitempty"`
+	TaskUUID string `json:"task_uuid"`
 }

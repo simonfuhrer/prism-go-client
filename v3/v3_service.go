@@ -2515,7 +2515,7 @@ func (op Operations) ListRecoveryPoints(ctx context.Context, getEntitiesRequest 
 }
 
 func (op Operations) GetRecoveryPoint(ctx context.Context, uuid string) (*VMRecoveryPointIntentResponse, error) {
-	path := fmt.Sprintf("/recovery_points/%s", uuid)
+	path := fmt.Sprintf("/vm_recovery_points/%s", uuid)
 	response := new(VMRecoveryPointIntentResponse)
 
 	req, err := op.client.NewRequest(http.MethodGet, path, nil)
@@ -2527,7 +2527,7 @@ func (op Operations) GetRecoveryPoint(ctx context.Context, uuid string) (*VMReco
 }
 
 func (op Operations) CreateRecoveryPoint(ctx context.Context, createRequest *VMRecoveryPointIntentInput) (*VMRecoveryPointIntentResponse, error) {
-	req, err := op.client.NewRequest(http.MethodPost, "/recovery_points", createRequest)
+	req, err := op.client.NewRequest(http.MethodPost, "/vm_recovery_points", createRequest)
 	vmRecoveryPointIntentResponse := new(VMRecoveryPointIntentResponse)
 
 	if err != nil {
@@ -2538,7 +2538,7 @@ func (op Operations) CreateRecoveryPoint(ctx context.Context, createRequest *VMR
 }
 
 func (op Operations) DeleteRecoveryPoint(ctx context.Context, uuid string) (*DeleteResponse, error) {
-	path := fmt.Sprintf("/recovery_points/%s", uuid)
+	path := fmt.Sprintf("/vm_recovery_points/%s", uuid)
 
 	req, err := op.client.NewRequest(http.MethodDelete, path, nil)
 	deleteResponse := new(DeleteResponse)

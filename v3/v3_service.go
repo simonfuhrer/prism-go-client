@@ -2501,7 +2501,7 @@ func (op Operations) GetAvailabilityZone(ctx context.Context, uuid string) (*Ava
  * @param getEntitiesRequest @return *VMRecoveryPointListIntentResponse
  */
 func (op Operations) ListRecoveryPoints(ctx context.Context, getEntitiesRequest *DSMetadata) (*VMRecoveryPointListIntentResponse, error) {
-	path := "/recovery_points/list"
+	path := "/vm_recovery_points/list"
 
 	req, err := op.client.NewRequest(http.MethodPost, path, getEntitiesRequest)
 	vmRecoveryPointListIntentResponse := new(VMRecoveryPointListIntentResponse)
